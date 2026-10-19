@@ -37,9 +37,9 @@ return new class extends Migration
             foreach ($columns as $column) {
                 if (in_array($driver, ['mysql', 'mariadb'])) {
                     $null = ($table === 'users' && $column === 'name') || ($table === 'app_notifications') ? 'NOT NULL' : 'NULL';
-                    DB::statement("ALTER TABLE `{$table}` MODIFY `{$column}` TEXT {$null}");
+                    DB::statement("ALTER TABLE `{$table}` MODIFY `{$column}` VARCHAR {$null}");
                 } elseif ($driver === 'pgsql') {
-                    DB::statement("ALTER TABLE \"{$table}\" ALTER COLUMN \"{$column}\" TYPE TEXT USING \"{$column}\"::text");
+                    DB::statement("ALTER TABLE \"{$table}\" ALTER COLUMN \"{$column}\" TYPE VARCHAR USING \"{$column}\"::varchar");
                 }
             }
 

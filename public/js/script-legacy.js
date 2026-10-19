@@ -855,7 +855,7 @@
             weeks.forEach((n, i) => add('Weekly Donations ' + MONTH_NAMES_FULL[now.getMonth()] + ' ' + year, 'Week ' + (i + 1), n));
             add('Donor Screening', 'Total Donors', sc.total);
             add('Donor Screening', 'Eligible', sc.eligible);
-            add('Donor Screening', 'Under Review (Pending Donors)', sc.review);
+            add('Donor Screening', 'Under Review', sc.review);
             add('Donor Screening', 'Permanently Deferred', sc.perm);
             add('Collected Bags', 'Collected - Usable', b.usable);
             add('Collected Bags', 'Collected - Rejected', b.rejected);

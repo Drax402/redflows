@@ -822,11 +822,11 @@
                     <div class="scr-row"><span>Collected - Usable</span><b>${b.usable}</b></div>
                     <div class="scr-row"><span>Collected - Rejected</span><b>${b.rejected}</b></div>
                     <div class="scr-row"><span>In Stock</span><b>${b.stock}</b></div>
-                    <div class="scr-row"><span>Expired (still in storage)</span><b>${b.expired}</b></div>
+                    <div class="scr-row"><span>Expired</span><b>${b.expired}</b></div>
                     <div class="scr-row"><span>Disposed</span><b>${b.disposed}</b></div>
                     <div class="scr-row"><span>Used</span><b>${b.used}</b></div>
-                    <div class="scr-row"><span>Transferred (to another place)</span><b>${b.transferred}</b></div>
-                    <div class="scr-row"><span>Released (to patient)</span><b>${b.released}</b></div>`;
+                    <div class="scr-row"><span>Transferred</span><b>${b.transferred}</b></div>
+                    <div class="scr-row"><span>Released</span><b>${b.released}</b></div>`;
             }
             const r = document.getElementById('statRejectedTop'); if (r) r.textContent = bagBuckets().rejected;
         }
@@ -860,11 +860,11 @@
             add('Collected Bags', 'Collected - Usable', b.usable);
             add('Collected Bags', 'Collected - Rejected', b.rejected);
             add('Collected Bags', 'In Stock', b.stock);
-            add('Collected Bags', 'Expired (still in storage)', b.expired);
+            add('Collected Bags', 'Expired', b.expired);
             add('Collected Bags', 'Disposed', b.disposed);
             add('Collected Bags', 'Used', b.used);
-            add('Collected Bags', 'Transferred (to another place)', b.transferred);
-            add('Collected Bags', 'Released (to patient)', b.released);
+            add('Collected Bags', 'Transferred', b.transferred);
+            add('Collected Bags', 'Released', b.released);
             ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'].forEach(t => add('Donors per Blood Type', t, donorsData.filter(d => d.bloodType === t).length));
             add('Donor Masterlist Eligible Donor', 'Overall', sc.eligible);
             const blob = buildDonorXlsx(['Section', 'Item', 'Value'], rows, new Set([2]), new Set(), 'Statistics', statTitle);

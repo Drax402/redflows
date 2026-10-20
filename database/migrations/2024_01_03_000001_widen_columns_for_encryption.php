@@ -11,7 +11,7 @@ return new class extends Migration
         $driver = DB::getDriverName();
 
         if (in_array($driver, ['mysql', 'mariadb'])) {
-            foreach (['donors_name_index', 'donors_blood_type_index'] as $index) {
+            foreach (['donors_name_index', 'donors_blood_type_index', 'donors_brgy_index'] as $index) {
                 try {
                     DB::statement('ALTER TABLE donors DROP INDEX ' . $index);
                 } catch (\Throwable $e) {
@@ -20,6 +20,7 @@ return new class extends Migration
         } else {
             DB::statement('DROP INDEX IF EXISTS donors_name_index');
             DB::statement('DROP INDEX IF EXISTS donors_blood_type_index');
+            DB::statement('DROP INDEX IF EXISTS donors_brgy_index');
         }
 
         $text = [
